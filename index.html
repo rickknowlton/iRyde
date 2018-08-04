@@ -17,34 +17,37 @@
 </head>
 
 <body>
-    <h1>iRyde</h1>
-    <div class="inputForm">
-        <form action="">
-            <div class="input-field">
+    <div class="container">
+        <h1>iRyde</h1>
+        <div class="inputForm">
+            <form action="">
+                <div class="input-field">
 
-                <!--pickup location-->
+                    <!--pickup location-->
 
-                <input type="text" id="pickup">
+                    <input type="text" id="pickup">
 
-                <label for="pickup">Start Location</label>
-            </div>
-            <!--dropoff location-->
-            <div class="input-field">
+                    <label for="pickup">Start Location</label>
+                </div>
+                <!--dropoff location-->
+                <div class="input-field">
 
-                <input type="text" id="destination">
-                <label for="destination">Destination</label>
-            </div>
-            <!--submit request-->
-            <button type="submit" id="getPrices" class="red btn-large waves-effect waves-light">Find the Cheapest Ride</button>
+                    <input type="text" id="destination">
+                    <label for="destination">Destination</label>
+                </div>
+                <!--submit request-->
+                <button type="submit" id="getPrices" class="red btn-large waves-effect waves-light">Find the Cheapest Ride</button>
 
-        </form>
+            </form>
 
+        </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <script src="./assets/javascript/firebase.js"></script>
     <script src="./assets/javascript/javascript.js"></script>
+    
 </body>
 
 </html>
