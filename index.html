@@ -14,47 +14,13 @@
     <!-- JQuery Link -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- <script src="./assets/javascript/firebase.js"></script> -->
-    
+    <!-- google autocomplete link -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSXRIONtBTM8PTsI8meEa8vHiEVlcZ2Qk&libraries=places"></script>
 
 </head>
 
 <body>
-    <!-- google autocomplete link -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSXRIONtBTM8PTsI8meEa8vHiEVlcZ2Qk&libraries=places"></script>
-    <!-- <script type="text/javascript">
-        google.maps.event.addDomListener(window, 'load', initialize);
 
-        function initialize() {
-            console.log("worked")
-
-            var start = new google.maps.places.Autocomplete(document.getElementById('origin'));
-            var end = new google.maps.places.Autocomplete(document.getElementById('destination'));
-
-            google.maps.event.addListener(start, 'place_changed', function () {
-                var place = start.getPlace();
-                var location = "<b>Address</b>: " + place.formatted_address + "<br/>";
-                location += "<b>Latitude</b>: " + place.geometry.location.lng() + "<br/>";
-                location += "<b>Longitude</b>: " + place.geometry.location.lat();
-                document.getElementById('display-origin').innerhtml = location;
-                var origin = place.geometry.location.lng() + place.geometry.location.lat()
-                console.log(location)
-                const originLat = place.geometry.location.lat()
-                const originlong = place.geometry.location.lng()
-            });
-
-            google.maps.event.addListener(end, 'place_changed', function () {
-                var place = end.getPlace();
-                var location = "<b>Address</b>: " + place.formatted_address + "<br/>";
-                location += "<b>Latitude</b>: " + place.geometry.location.lng() + "<br/>";
-                location += "<b>Longitude</b>: " + place.geometry.location.lat();
-                document.getElementById('display-destination').innerhtml = location;
-                var destination = place.geometry.location.lng() + place.geometry.location.lat()
-                console.log(location)
-                const destinationLat = place.geometry.location.lat()
-                const destinationlong = place.geometry.location.lng()
-            });
-        }
-    </script> -->
     <div class="container">
         <h1>iRyde</h1>
         <div class="row">
