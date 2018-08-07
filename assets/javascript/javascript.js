@@ -43,11 +43,33 @@ $(document).ready(function () {
             $("#origin-address").html("<div> Starting at: "+originAddress+" miles")
             $("#destination-address").html("<div> Arriving at: "+destinationAddress+" miles")
             $("#display-destination").html("<div> Distance: "+distance+" miles")
-            $("#display-destination").append("<div class='uberDisplay'> Uber: $'"+uberPrice+"'")
-            $("#display-destination").append("<div class='lyftDisplay'> Lyft: $'"+lyftPrice+"'")
 
+
+            var InitialChargeLyft = 1.20;
+            var costPerMileLyft = 1.35;
+            var ServiceFeeLyft = 2.45;
+            var MinimumFareLyft = 6.45;
+
+            var InitialChargeUber = 1.20;
+            var costPerMileUber = 1.50;
+            var ServiceFeeUber = 2.05;
+            var MinimumFareUber = 7.26;
+
+            var lyftPrice = InitialChargeLyft + ServiceFeeLyft + (distance * costPerMileLyft);            
+            var uberPrice = InitialChargeUber + ServiceFeeUber + (distance * costPerMileUber);
+
+            if (uberPrice < MinimumFareUber){
+                $("#uberPrice").html("<div class='uberDisplay'> Uber: $" + MinimumFareUber);
+            } else {
+                $("#uberPrice").html("<div class='uberDisplay'> Uber: $" + uberPrice.toFixed(2));
+            }
+
+            if (lyftPrice < MinimumFareUber){
+                $("#lyftPrice").html("<div class='uberDisplay'> Lyft: $" + MinimumFareLyft);
+            } else {
+                $("#lyftPrice").html("<div class='uberDisplay'> Lyft: $" + lyftPrice.toFixed(2));
+            }
         }); // end ajax call
-    };
 
     $(".input-origin").focus(function(){
         $(".addressList").css('display','block');
