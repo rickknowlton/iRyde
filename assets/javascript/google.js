@@ -6,7 +6,7 @@ function initilize() {
 
     google.maps.event.addListener(start, 'place_changed', function () {
         var place = start.getPlace();
-        // var location = "<b>Address</b>: " + place.formatted_address + "<br/>";
+        originAddress = place.formatted_address
         // location += "<b>Latitude</b>: " + place.geometry.location.lng() + "<br/>";
         // location += "<b>Longitude</b>: " + place.geometry.location.lat();
         // document.getElementById('display-origin').innerHTML = location;
@@ -17,7 +17,7 @@ function initilize() {
 
     google.maps.event.addListener(end, 'place_changed', function () {
         var place = end.getPlace();
-        // var location = "<b>Address</b>: " + place.formatted_address + "<br/>";
+        destinationAddress = place.formatted_address
         // location += "<b>Latitude</b>: " + place.geometry.location.lng() + "<br/>";
         // location += "<b>Longitude</b>: " + place.geometry.location.lat();
         // document.getElementById('display-destination').innerHTML = location;
