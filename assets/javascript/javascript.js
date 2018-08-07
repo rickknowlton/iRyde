@@ -40,6 +40,8 @@ $(document).ready(function () {
             console.log(result)
             let distance = Number(result.resourceSets[0].resources[0].results[0].travelDistance * 0.621371).toFixed(2);
             console.log(distance)
+            $("#origin-address").html("<div> Starting at: "+originAddress+" miles")
+            $("#destination-address").html("<div> Arriving at: "+destinationAddress+" miles")
             $("#display-destination").html("<div> Distance: "+distance+" miles")
             $("#display-destination").append("<div class='uberDisplay'> Uber: $'"+uberPrice+"'")
             $("#display-destination").append("<div class='lyftDisplay'> Lyft: $'"+lyftPrice+"'")
