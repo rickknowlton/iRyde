@@ -1,0 +1,21 @@
+.container {
+    text-align: center;
+}
+.results{
+    font-size: 20px;
+    margin:5px;
+}
+.addressList {
+    display: none;
+}
+
+.addressListTwo {
+    display: none;
+}
+#getPrices{
+    margin:10px;
+}
+h6{
+    font-size: 12px;
+    font-style: italic;
+}
