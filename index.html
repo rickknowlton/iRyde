@@ -7,47 +7,112 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" src="assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <!-- Materialize CDN links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <!-- JQuery Link -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <!-- <script src="./assets/javascript/firebase.js"></script> -->
+    
 
 </head>
+<style>
+    .addressList{
+        display: none;
+    }
+    .addressListTwo{
+        display: none;
+    }
+</style>
 
 <body>
+    <!-- google autocomplete link -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSXRIONtBTM8PTsI8meEa8vHiEVlcZ2Qk&libraries=places"></script>
+    <!-- <script type="text/javascript">
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+        function initialize() {
+            console.log("worked")
+
+            var start = new google.maps.places.Autocomplete(document.getElementById('origin'));
+            var end = new google.maps.places.Autocomplete(document.getElementById('destination'));
+
+            google.maps.event.addListener(start, 'place_changed', function () {
+                var place = start.getPlace();
+                var location = "<b>Address</b>: " + place.formatted_address + "<br/>";
+                location += "<b>Latitude</b>: " + place.geometry.location.lng() + "<br/>";
+                location += "<b>Longitude</b>: " + place.geometry.location.lat();
+                document.getElementById('display-origin').innerhtml = location;
+                var origin = place.geometry.location.lng() + place.geometry.location.lat()
+                console.log(location)
+                const originLat = place.geometry.location.lat()
+                const originlong = place.geometry.location.lng()
+            });
+
+            google.maps.event.addListener(end, 'place_changed', function () {
+                var place = end.getPlace();
+                var location = "<b>Address</b>: " + place.formatted_address + "<br/>";
+                location += "<b>Latitude</b>: " + place.geometry.location.lng() + "<br/>";
+                location += "<b>Longitude</b>: " + place.geometry.location.lat();
+                document.getElementById('display-destination').innerhtml = location;
+                var destination = place.geometry.location.lng() + place.geometry.location.lat()
+                console.log(location)
+                const destinationLat = place.geometry.location.lat()
+                const destinationlong = place.geometry.location.lng()
+            });
+        }
+    </script> -->
     <div class="container">
         <h1>iRyde</h1>
-        <div class="inputForm">
-            <form action="">
-                <div class="input-field">
 
-                    <!--pickup location-->
+                <div class="inputForm input-wrapper">
+                    <form action="">
+                        <div class="input-field">
+                            <!--pickup location-->
+                            <input type="text" id="origin" class="input-origin">
+                            <!-- <label for="origin">Start Location</label> -->
+                            <div class="addressList">
+                                <!--remove div content when fairebase is ready-->
+                                <div>pre address1</div>
+                                <div>2</div>
+                                <div>3</div>
+                                <div>4</div>
 
-                    <input type="text" id="pickup">
+                            </div>
+                        </div>
+                        <!--dropoff location-->
+                        <div class="input-field">
+                            <input type="text" id="destination" class="input-destination">
+                            <!-- <label for="destination">Destination</label> -->
+                            <div class="addressListTwo">
+                                <!--remove div content when fairebase is ready-->
+                                    <div>pre address1</div>
+                                    <div>2</div>
+                                    <div>3</div>
+                                    <div>4</div>
+                        </div>
+                        <!--submit request-->
+                        <button type="submit" id="getPrices" class="red btn-large waves-effect waves-light">Find the Cheapest Ride</button>
 
-                    <label for="pickup">Start Location</label>
+                    </form>
                 </div>
-                <!--dropoff location-->
-                <div class="input-field">
+            </div>
+        </div>
 
-                    <input type="text" id="destination">
-                    <label for="destination">Destination</label>
-                </div>
-                <!--submit request-->
-                <button type="submit" id="getPrices" class="red btn-large waves-effect waves-light">Find the Cheapest Ride</button>
-
-            </form>
-
+                <div id="display-origin"></div>
+                <div id="display-destination"></div>
+            </div>
         </div>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script> -->
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    <script src="./assets/javascript/firebase.js"></script>
-    <script src="./assets/javascript/javascript.js"></script>
-    
+    <script src="./assets/javascript/javascript.js" type="text/javascript"></script>
+    <script src="./assets/javascript/google.js" type="text/javascript"></script>
+
+
 </body>
 
 </html>
