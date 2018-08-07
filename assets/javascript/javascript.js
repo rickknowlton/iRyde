@@ -1,33 +1,34 @@
-$(document).ready(function() {
+// IRyde API calls
 
+$(document).ready(function () {
     //using HTML geolocation get longitude and latidude of current user
     var x = $("display-origin");
     $(document).on("click", "#getPrices", getLocation)
 
-    function getLocation() {
-        debugger
-        console.log(originlat + originLong)
-        console.log(destinationLat + destinationLong)
-        //if user didnt type in origin location, indicating they want us to use current location then get user location
-        // define userlocation function 
-        if (useUserLocation) {
-            event.preventDefault()
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-                alert("Geolocation is not supported by this browser.");
-            }
-        }
-        console.log(originlat + originlong)
-    }
-    function showPosition(position) {
-        locationEnabled = true
-        var originLat = position.coords.latitude
-        var originLong = position.coords.longitude
-        var x = document.getElementById("display")
-        console.log(lat)
-        x.innerHTML = "<h5>Latitude: " + lat +
-            "<p>Longitude: " + long;
+//     function getLocation() {
+//         debugger
+//         console.log(originlat + originLong)
+//         console.log(destinationLat + destinationLong)
+//         //if user didnt type in origin location, indicating they want us to use current location then get user location
+//         // define userlocation function 
+//         if (useUserLocation) {
+//             event.preventDefault()
+//             if (navigator.geolocation) {
+//                 navigator.geolocation.getCurrentPosition(showPosition);
+//             } else {
+//                 alert("Geolocation is not supported by this browser.");
+//             }
+//         }
+//         console.log(originlat + originlong)
+//     }
+//     function showPosition(position) {
+//         locationEnabled = true
+//         var originLat = position.coords.latitude
+//         var originLong = position.coords.longitude
+//         var x = document.getElementById("display")
+//         console.log(lat)
+//         x.innerHTML = "<h5>Latitude: " + lat +
+//             "<p>Longitude: " + long;
 
         var queryURL = "https://dev.virtualearth.net/REST/v1/Routes/DistanceMatrix?origins=" + originLat + "," + originLong + "&destinations=" + destinationLat + "," + destinationLong + "&travelMode=driving&key=AgH4JV1Yd-wI2P3_Pz9KF6UirlGXTyPEHoofBVxRuVBOVJT4IiqbNW9l-sEiTjSB";
 
@@ -69,10 +70,5 @@ $(document).ready(function() {
         $(".addressList").css('display', 'none');
         $(".addressListTwo").css('display','none');
     });
+});//doc ready closing tag
 
-
-
-
-
-
-});
