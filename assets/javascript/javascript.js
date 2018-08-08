@@ -60,20 +60,8 @@ $(document).ready(function () {
         $(".addressList").css('display', 'block');
     });
 
-    $(".addressList div").click(function () {
-        var inputValue = $('.input-origin');
-        var data = $(this).text();
-        inputValue.val(data);
-    });
-
     $(".input-destination").focus(function () {
         $(".addressListTwo").css('display', 'block');
-    });
-
-    $(".addressListTwo div").click(function () {
-        var inputValue = $('.input-destination');
-        var data = $(this).text();
-        inputValue.val(data);
     });
 
     $('.container').children().not('.input-wrapper').click(function () {
@@ -87,47 +75,61 @@ $(document).ready(function () {
 
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyCzXDZCVvFgD8RIqO0UkBxQLDc4Vxum4f0",
-        authDomain: "iryde-62588.firebaseapp.com",
-        databaseURL: "https://iryde-62588.firebaseio.com",
-        projectId: "iryde-62588",
-        storageBucket: "iryde-62588.appspot.com",
-        messagingSenderId: "563500222257"
-    };
-    firebase.initializeApp(config);
+        apiKey: "AIzaSyD9NQ5HD9-axStBjspiOfxstvdn-VJc9aI",
+        authDomain: "irydefix.firebaseapp.com",
+        databaseURL: "https://irydefix.firebaseio.com",
+        projectId: "irydefix",
+        storageBucket: "irydefix.appspot.com",
+        messagingSenderId: "1020034828009"
+      };
+      firebase.initializeApp(config);
 
     var database = firebase.database();
 
     // sends user input after button click to database
-    function addToDatabase() {
-        database.ref("rideHistory").push({
+    $('#getPrices').on('click',function(){
+        database.ref().push({
             pickupLocation: originAddress,
             destination: destinationAddress,
-            distanceMiles: distance,
-            time: tripTime,
-            dateAdded: firebase.database.ServerValue.TIMESTAMP
+
         });
-    }
+    });
 
     // Firebase watcher .on("child_added"
-    database.ref("rideHistory").on("child_added", function (snapshot) {
+    database.ref().on("child_added", function (childSnapshot) {
         // storing the snapshot.val() in a variable for convenience
-        var sv = snapshot.val();
+        var sv = childSnapshot.val();
 
         // Console.loging the data
         console.log(sv.pickupLocation);
         console.log(sv.destination);
-        console.log(sv.distanceMiles);
-        console.log(sv.time);
 
         // Change the HTML to reflect
-        $(".addressList").append('<div class="recentRides">' + sv.pickupLocation + '');
-
+       
+        $(".addressList").prepend('<div class="oo">' + sv.pickupLocation + '</div>' );
+        $('#pp div:lt(-4)').remove();
+        $(".addressListTwo").prepend('<div class="inp">'+sv.destination+'</div>');
+        $('#dd div:lt(-4)').remove();
+        
         // Handle the errors
     }, function (errorObject) {
         console.log("Errors handled: " + errorObject.code);
     });
+    
+    $("div#pp").on("click", "div", function(){
+        var inputValue = $('.input-origin');
+        var data = $(this).text();
+        inputValue.val(data);
+        console.log(data)
+    });
 
+    $("div#dd").on("click", "div", function(){
+        var inputValue = $('.input-destination');
+        var data = $(this).text();
+        inputValue.val(data);
+        console.log(data)
+    });
+    
 
 });//doc ready closing tag
 
