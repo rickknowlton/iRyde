@@ -30,29 +30,26 @@
                     <form action="">
                         <div class="input-field">
                             <!--pickup location-->
-                            <input type="text" id="origin" class="input-origin">
-                            <!-- <label for="origin">Start Location</label> -->
-                            <div class="addressList">
+                            <input type="text" id="origin" class="input-origin" placeholder="">
+                            <label for="origin">Start Location</label>
+                            <div class="addressList" id="pp">
                                 <!--remove div content when fairebase is ready-->
-                                <div>Recent Addreses</div>
       
                             </div>
                         </div>
                         <!--dropoff location-->
                         <div class="input-field">
-                            <input type="text" id="destination" class="input-destination">
-                            <!-- <label for="destination">Destination</label> -->
-                            <div class="addressListTwo">
+                            <input type="text" id="destination" class="input-destination" placeholder="">
+                            <label for="destination">Destination</label>
+                            <div class="addressListTwo" id="dd">
                                 <!--remove div content when fairebase is ready-->
-                                    <div>Recent Addresses</div>
 
                         </div>
                         <!--submit request-->
                         <button type="submit" id="getPrices" class="red btn-large waves-effect waves-light">Find the Cheapest Ride</button>
                     </form>
                 </div>
-        <div class="row">
-            <div class="col s10">
+
                 <div id="origin-address"></div>
                 <div id="destination-address"></div>
                 <div id="display-distance"></div>
@@ -60,8 +57,7 @@
                 <div id="uberPrice"></div>
                 <div id="lyftPrice"></div>
                 <h6>-All numbers are approximate values, surge pricing not factored into calculations</h6>
-            </div>
-        </div>
+
     </div>
 
     <!-- Materialize JavaScript -->
