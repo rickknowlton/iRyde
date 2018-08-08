@@ -49,7 +49,7 @@ $(document).ready(function () {
             $("#display-duration").append("<div class='results'> <b>Duration:</b><br> " + tripTime + " minutes<hr>")
 
         }); // end ajax call
-        addToDatabase()
+        
     });
 
 
