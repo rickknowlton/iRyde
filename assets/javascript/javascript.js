@@ -106,9 +106,9 @@ $(document).ready(function () {
 
         // Change the HTML to reflect
        
-        $(".addressList").prepend('<div class="oo">' + sv.pickupLocation + '</div>' );
+        $(".addressList").append('<div class="oo">' + sv.pickupLocation + '</div>' );
         $('#pp div:lt(-4)').remove();
-        $(".addressListTwo").prepend('<div class="inp">'+sv.destination+'</div>');
+        $(".addressListTwo").append('<div class="inp">'+sv.destination+'</div>');
         $('#dd div:lt(-4)').remove();
         
         // Handle the errors
