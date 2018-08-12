@@ -12,7 +12,7 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (result) {
             console.log(result)
-            distance = (result.resourceSets[0].resources[0].results[0].travelDistance).toFixed(2)
+            distance = ((result.resourceSets[0].resources[0].results[0].travelDistance)*0.621371).toFixed(2)
             tripTime = (result.resourceSets[0].resources[0].results[0].travelDuration).toFixed()
             console.log(distance)
 
