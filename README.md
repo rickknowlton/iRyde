@@ -26,7 +26,7 @@
 
 #### Link to project [https://izaakmills.github.io/codeteam-6/]
 
-##Contributors
+## Contributors
 - Rick Knowlton
 - Bob Williams
 - Izaak Mills
