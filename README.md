@@ -25,3 +25,9 @@
 * HTML / CSS, cause you kinda have too
 
 #### Link to project [https://izaakmills.github.io/codeteam-6/]
+
+##Contributors
+- Rick Knowlton
+- Bob Williams
+- Izaak Mills
+- Lucky Fang
